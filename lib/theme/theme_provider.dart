@@ -3,7 +3,6 @@ import 'themes_data.dart';
 
 class ThemeProvider with ChangeNotifier {
   ThemeData _themeData = lightMode;
-
   ThemeData get themeData => _themeData;
 
   set themeData(ThemeData themeData) {
@@ -11,7 +10,11 @@ class ThemeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void toggleTheme() {
+  bool _isDark = false;
+  bool get isDark => _isDark;
+
+  void toggleTheme(bool newValue) {
+    _isDark = newValue;
     if (_themeData == lightMode) {
       themeData = darkMode;
     } else {

@@ -53,11 +53,21 @@ class _MainPageState extends State<MainPage> {
                 ),
                 onPressed: () {
                   // print('Toggling');
-                  Provider.of<ThemeProvider>(context, listen: false)
-                      .toggleTheme();
+                  // value:
+                  var value = Provider.of<ThemeProvider>(context).isDark;
+                  (value) => Provider.of<ThemeProvider>(context, listen: false)
+                      .toggleTheme(value);
+                  // Provider.of<ThemeProvider>(context, listen: false)
+                  //     .toggleTheme();
                 }),
             const SizedBox(
               height: 5,
+            ),
+            Switch(
+              value: Provider.of<ThemeProvider>(context).isDark,
+              onChanged: (value) =>
+                  Provider.of<ThemeProvider>(context, listen: false)
+                      .toggleTheme(value),
             ),
             MyBox(
               color: Theme.of(context).colorScheme.primary,
@@ -65,8 +75,8 @@ class _MainPageState extends State<MainPage> {
                   color: Theme.of(context).colorScheme.secondary,
                   onTap: () {
                     // print('Toggling');
-                    Provider.of<ThemeProvider>(context, listen: false)
-                        .toggleTheme();
+                    // Provider.of<ThemeProvider>(context, listen: false)
+                    //     .toggleTheme();
                   }),
             ),
           ],
