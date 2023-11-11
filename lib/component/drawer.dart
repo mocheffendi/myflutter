@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_route_name/services/routes.dart';
 import 'package:flutter_route_name/theme/theme_provider.dart';
-import 'package:flutter_route_name/theme/themes_data.dart';
+// import 'package:flutter_route_name/theme/themes_data.dart';
 import 'package:provider/provider.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -15,6 +15,9 @@ class MyDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(children: [
         DrawerHeader(
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary,
+          ),
           child: GestureDetector(
             child: const Icon(
               Icons.home,
@@ -41,9 +44,30 @@ class MyDrawer extends StatelessWidget {
         ),
         ListTile(
           leading: (Provider.of<ThemeProvider>(context).isDark)
-              ? const Icon(Icons.nights_stay_rounded)
-              : const Icon(Icons.sunny),
+              ? InkWell(
+                  child: const Icon(Icons.nights_stay_rounded),
+                  onTap: () {
+                    Provider.of<ThemeProvider>(context, listen: false)
+                        .toggleTheme(
+                            !Provider.of<ThemeProvider>(context, listen: false)
+                                .isDark);
+                  })
+              : InkWell(
+                  child: const Icon(Icons.sunny),
+                  onTap: () {
+                    Provider.of<ThemeProvider>(context, listen: false)
+                        .toggleTheme(
+                            !Provider.of<ThemeProvider>(context, listen: false)
+                                .isDark);
+                  }),
           title: const Text('Theme Mode'),
+          onTap: () {
+            Provider.of<ThemeProvider>(context, listen: false).toggleTheme(
+                !Provider.of<ThemeProvider>(context, listen: false).isDark);
+            // log(Provider.of<ThemeProvider>(context, listen: false)
+            //     .isDark
+            //     .toString());
+          },
           trailing: Switch(
             value: Provider.of<ThemeProvider>(context).isDark,
             onChanged: (value) =>

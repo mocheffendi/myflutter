@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_route_name/component/button.dart';
 import 'package:flutter_route_name/component/drawer.dart';
@@ -47,19 +49,6 @@ class _MainPageState extends State<MainPage> {
             const SizedBox(
               height: 5,
             ),
-            ElevatedButton(
-                child: const Text(
-                  'Toggle Theme',
-                ),
-                onPressed: () {
-                  // print('Toggling');
-                  // value:
-                  var value = Provider.of<ThemeProvider>(context).isDark;
-                  (value) => Provider.of<ThemeProvider>(context, listen: false)
-                      .toggleTheme(value);
-                  // Provider.of<ThemeProvider>(context, listen: false)
-                  //     .toggleTheme();
-                }),
             const SizedBox(
               height: 5,
             ),
@@ -74,6 +63,12 @@ class _MainPageState extends State<MainPage> {
               child: MyButton(
                   color: Theme.of(context).colorScheme.secondary,
                   onTap: () {
+                    Provider.of<ThemeProvider>(context, listen: false)
+                        .toggleTheme(
+                            !Provider.of<ThemeProvider>(context, listen: false)
+                                .isDark);
+                    // ThemeProvider.toggleTheme(!ThemeProvider.isDark);
+                    //     .toggleTheme(value);
                     // print('Toggling');
                     // Provider.of<ThemeProvider>(context, listen: false)
                     //     .toggleTheme();

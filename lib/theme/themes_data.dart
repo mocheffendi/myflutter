@@ -33,6 +33,11 @@ ThemeData lightMode = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(foregroundColor: Colors.grey.shade800)),
+  // iconButtonTheme: IconButtonThemeData(),
+  // splashColor: Colors.transparent,
+  // highlightColor: Colors.transparent,
+  // hoverColor: Colors.transparent,
+
   floatingActionButtonTheme:
       FloatingActionButtonThemeData(foregroundColor: Colors.grey.shade800),
 );
@@ -49,6 +54,9 @@ ThemeData darkMode = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(foregroundColor: Colors.grey.shade200)),
+  // splashColor: Colors.transparent,
+  // highlightColor: Colors.transparent,
+  // hoverColor: Colors.transparent,
   floatingActionButtonTheme:
       FloatingActionButtonThemeData(foregroundColor: Colors.grey.shade200),
 );
