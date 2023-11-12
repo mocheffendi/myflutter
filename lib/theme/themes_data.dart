@@ -30,13 +30,39 @@ ThemeData lightMode = ThemeData(
   ),
   appBarTheme: AppBarTheme(
     foregroundColor: Colors.grey.shade800,
+    backgroundColor: Colors.amber,
   ),
+
   elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(foregroundColor: Colors.grey.shade800)),
   // iconButtonTheme: IconButtonThemeData(),
   // splashColor: Colors.transparent,
   // highlightColor: Colors.transparent,
   // hoverColor: Colors.transparent,
+
+  textTheme: TextTheme(
+    bodyLarge: TextStyle(color: Colors.grey.shade800),
+    bodyMedium: TextStyle(color: Colors.grey.shade800),
+    bodySmall: TextStyle(color: Colors.grey.shade800),
+    labelLarge: TextStyle(color: Colors.grey.shade800),
+    labelMedium: TextStyle(color: Colors.grey.shade800),
+    labelSmall: TextStyle(color: Colors.grey.shade800),
+  ),
+
+  inputDecorationTheme: InputDecorationTheme(
+    fillColor: Colors.grey.shade200,
+    labelStyle: TextStyle(
+      color: Colors.grey.shade900,
+    ),
+    floatingLabelStyle: TextStyle(
+      color: Colors.grey.shade900,
+    ),
+    prefixIconColor: Colors.amber.shade900,
+  ),
+
+  iconTheme: IconThemeData(
+    color: Colors.grey.shade800,
+  ),
 
   floatingActionButtonTheme:
       FloatingActionButtonThemeData(foregroundColor: Colors.grey.shade800),
@@ -51,12 +77,33 @@ ThemeData darkMode = ThemeData(
   ),
   appBarTheme: AppBarTheme(
     foregroundColor: Colors.grey.shade200,
+    backgroundColor: Colors.amber.shade900,
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(foregroundColor: Colors.grey.shade200)),
   // splashColor: Colors.transparent,
   // highlightColor: Colors.transparent,
   // hoverColor: Colors.transparent,
+  textTheme: TextTheme(
+    bodyLarge: TextStyle(color: Colors.grey.shade200),
+    bodyMedium: TextStyle(color: Colors.grey.shade200),
+    bodySmall: TextStyle(color: Colors.grey.shade200),
+    labelLarge: TextStyle(color: Colors.grey.shade200),
+    labelMedium: TextStyle(color: Colors.grey.shade200),
+    labelSmall: TextStyle(color: Colors.grey.shade200),
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    fillColor: Colors.grey.shade200,
+    floatingLabelStyle: TextStyle(
+      color: Colors.grey.shade200,
+    ),
+    prefixIconColor: Colors.amber.shade900,
+
+    // fillColor: Colors.white, // Background color of the input field
+  ),
+  iconTheme: IconThemeData(
+    color: Colors.grey.shade200,
+  ),
   floatingActionButtonTheme:
       FloatingActionButtonThemeData(foregroundColor: Colors.grey.shade200),
 );

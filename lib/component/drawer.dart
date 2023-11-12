@@ -43,23 +43,40 @@ class MyDrawer extends StatelessWidget {
           },
         ),
         ListTile(
+          leading: const Icon(Icons.fingerprint),
+          title: const Text('Fingerprint Backdoor'),
+          onTap: () {
+            Navigator.of(context).pushNamed(RoutesManager.fingerprintBackdoor);
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.list_alt_rounded),
+          title: const Text('LED Videotron Calculator'),
+          onTap: () {
+            Navigator.of(context)
+                .pushNamed(RoutesManager.ledvideotronCalculator);
+          },
+        ),
+        ListTile(
           leading: (Provider.of<ThemeProvider>(context).isDark)
-              ? InkWell(
-                  child: const Icon(Icons.nights_stay_rounded),
-                  onTap: () {
-                    Provider.of<ThemeProvider>(context, listen: false)
-                        .toggleTheme(
-                            !Provider.of<ThemeProvider>(context, listen: false)
-                                .isDark);
-                  })
-              : InkWell(
-                  child: const Icon(Icons.sunny),
-                  onTap: () {
-                    Provider.of<ThemeProvider>(context, listen: false)
-                        .toggleTheme(
-                            !Provider.of<ThemeProvider>(context, listen: false)
-                                .isDark);
-                  }),
+              ? const InkWell(
+                  child: Icon(Icons.nights_stay_rounded),
+                  // onTap: () {
+                  //   Provider.of<ThemeProvider>(context, listen: false)
+                  //       .toggleTheme(
+                  //           !Provider.of<ThemeProvider>(context, listen: false)
+                  //               .isDark);
+                  // }
+                )
+              : const InkWell(
+                  child: Icon(Icons.sunny),
+                  // onTap: () {
+                  //   Provider.of<ThemeProvider>(context, listen: false)
+                  //       .toggleTheme(
+                  //           !Provider.of<ThemeProvider>(context, listen: false)
+                  //               .isDark);
+                  // }
+                ),
           title: const Text('Theme Mode'),
           onTap: () {
             Provider.of<ThemeProvider>(context, listen: false).toggleTheme(

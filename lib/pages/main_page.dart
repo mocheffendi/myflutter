@@ -22,7 +22,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        // backgroundColor: Theme.of(context).colorScheme.background,
         title: Text(widget.title),
       ),
       drawer: const MyDrawer(),

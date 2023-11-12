@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         // automaticallyImplyLeading: false,
-        // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         title: Text(widget.title),
       ),
       drawer: const MyDrawer(),
