@@ -51,16 +51,52 @@ class MyDrawer extends StatelessWidget {
         ),
         ListTile(
           leading: const Icon(Icons.list_alt_rounded),
-          title: const Text('LED Videotron Calculator'),
+          title: const Text('LED Videotron Cabinet Calculator'),
           onTap: () {
             Navigator.of(context)
                 .pushNamed(RoutesManager.ledvideotronCalculator);
           },
         ),
         ListTile(
+          leading: const Icon(Icons.list_alt_rounded),
+          title: const Text('LED Videotron Modul Calculator'),
+          onTap: () {
+            Navigator.of(context)
+                .pushNamed(RoutesManager.ledvideotronmodulCalculator);
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.list_alt_rounded),
+          title: const Text('CobaGrid'),
+          onTap: () {
+            Navigator.of(context).pushNamed(RoutesManager.cobaGrid);
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.http),
+          title: const Text('HTTP & API'),
+          onTap: () {
+            Navigator.of(context).pushNamed(RoutesManager.todoPage);
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.calendar_month),
+          title: const Text('Calendar'),
+          onTap: () {
+            Navigator.of(context).pushNamed(RoutesManager.calendarPage);
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.calendar_month),
+          title: const Text('Drop Down Menu'),
+          onTap: () {
+            Navigator.of(context).pushNamed(RoutesManager.dropdownPage);
+          },
+        ),
+        ListTile(
           leading: (Provider.of<ThemeProvider>(context).isDark)
-              ? const InkWell(
-                  child: Icon(Icons.nights_stay_rounded),
+              ? GestureDetector(
+                  child: const Icon(Icons.nights_stay_rounded),
                   // onTap: () {
                   //   Provider.of<ThemeProvider>(context, listen: false)
                   //       .toggleTheme(
@@ -68,8 +104,8 @@ class MyDrawer extends StatelessWidget {
                   //               .isDark);
                   // }
                 )
-              : const InkWell(
-                  child: Icon(Icons.sunny),
+              : GestureDetector(
+                  child: const Icon(Icons.sunny),
                   // onTap: () {
                   //   Provider.of<ThemeProvider>(context, listen: false)
                   //       .toggleTheme(

@@ -4,6 +4,7 @@ import 'package:flutter_route_name/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(ChangeNotifierProvider(
     create: (context) => ThemeProvider(),
     child: const MyApp(),

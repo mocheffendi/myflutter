@@ -36,6 +36,19 @@ dependencies:
   cupertino_icons: ^1.0.2
   hexcolor: ^3.0.1
   provider:
+  http: ^1.1.0
+  google_fonts: ^6.1.0
+  screenshot: ^2.1.0
+  pdf: ^3.10.6
+  permission_handler: ^11.0.1
+  # image_gallery_saver: ^2.0.3
+  # share_plus: ^7.2.1
+  # path_provider: ^2.1.1
+  share_files_and_screenshot_widgets: ^1.0.6
+  add_2_calendar: ^3.0.1
+  calendar_view: ^1.0.4
+  dropdown_search: ^5.0.6
+  dio:
 
 dev_dependencies:
   flutter_test:

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_route_name/component/button.dart';
 import 'package:flutter_route_name/component/drawer.dart';
+import 'package:flutter_route_name/component/switch.dart';
 import 'package:flutter_route_name/services/routes.dart';
 import 'package:flutter_route_name/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
@@ -18,12 +19,15 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  bool isClicked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Theme.of(context).colorScheme.background,
         title: Text(widget.title),
+        actions: const [MySwitch()],
       ),
       drawer: const MyDrawer(),
       body: Center(
@@ -67,17 +71,88 @@ class _MainPageState extends State<MainPage> {
                         .toggleTheme(
                             !Provider.of<ThemeProvider>(context, listen: false)
                                 .isDark);
-                    // ThemeProvider.toggleTheme(!ThemeProvider.isDark);
-                    //     .toggleTheme(value);
-                    // print('Toggling');
-                    // Provider.of<ThemeProvider>(context, listen: false)
-                    //     .toggleTheme();
                   }),
             ),
+            Center(
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 500),
+                width: isClicked ? 100 : 200,
+                height: isClicked ? 100 : 200,
+                decoration: BoxDecoration(
+                  color: isClicked ? Colors.blue : Colors.amber,
+                  borderRadius: BorderRadius.circular(isClicked ? 4 : 200),
+                ),
+                child: Icon(
+                  isClicked ? Icons.abc : Icons.star,
+                  size: 64,
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MyGambarDetail(),
+                    ));
+              },
+              child: Hero(
+                tag: 'newyork',
+                child: Image.network(
+                  'https://images.unsplash.com/photo-1699817361440-95aab3ddd170?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                  width: 200,
+                ),
+              ),
+            ),
+            // ListView.separated(
+            //   itemCount: 50,
+            //   separatorBuilder: (BuildContext context, int index) {
+            //     return const Divider(
+            //       color: Colors.black,
+            //       thickness: 1,
+            //     );
+            //   },
+            //   itemBuilder: (BuildContext context, int index) {
+            //     return ListTile(
+            //       leading: const Icon(Icons.abc),
+            //       title: Text('Items $index'),
+            //       subtitle: Text('sub judul items $index'),
+            //       trailing: const Icon(Icons.delete),
+            //       onTap: () {
+            //         print('aksi item ke $index');
+            //       },
+            //     );
+            //   },
+            // ),
           ],
         ),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            isClicked = !isClicked;
+          });
+        },
+        child: const Icon(Icons.ac_unit_sharp),
+      ),
+    );
+  }
+}
+
+class MyGambarDetail extends StatelessWidget {
+  const MyGambarDetail({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('My Gambar Detail'),
+      ),
+      body: Hero(
+        tag: 'newyork',
+        child: Image.network(
+            'https://images.unsplash.com/photo-1699817361440-95aab3ddd170?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+      ),
     );
   }
 }

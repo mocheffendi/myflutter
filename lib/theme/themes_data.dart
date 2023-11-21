@@ -24,15 +24,18 @@ import 'package:flutter/material.dart';
 ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
   colorScheme: ColorScheme.light(
-    background: Colors.grey.shade400,
-    primary: Colors.grey.shade300,
-    secondary: Colors.grey.shade200,
+    background: Colors.blueGrey.shade400,
+    primary: Colors.blueGrey.shade300,
+    secondary: Colors.blueGrey.shade200,
+    tertiary: Colors.blueGrey.shade900,
+    surface: Colors.blueGrey.shade100,
   ),
   appBarTheme: AppBarTheme(
-    foregroundColor: Colors.grey.shade800,
-    backgroundColor: Colors.amber,
+    foregroundColor: Colors.grey.shade200,
+    backgroundColor: Colors.amber.shade900,
   ),
-
+  scaffoldBackgroundColor: Colors.blueGrey.shade50,
+  // canvasColor: Colors.blueGrey.shade900,
   elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(foregroundColor: Colors.grey.shade800)),
   // iconButtonTheme: IconButtonThemeData(),
@@ -71,14 +74,19 @@ ThemeData lightMode = ThemeData(
 ThemeData darkMode = ThemeData(
   brightness: Brightness.dark,
   colorScheme: ColorScheme.dark(
-    background: Colors.grey.shade900,
-    primary: Colors.grey.shade800,
-    secondary: Colors.grey.shade700,
+    background: Colors.blueGrey.shade900,
+    primary: Colors.blueGrey.shade800,
+    secondary: Colors.blueGrey.shade700,
+    surface: Colors.blueGrey.shade800,
+    tertiary: Colors.blueGrey.shade100,
+    primaryContainer: Colors.blueGrey.shade800,
   ),
   appBarTheme: AppBarTheme(
     foregroundColor: Colors.grey.shade200,
     backgroundColor: Colors.amber.shade900,
   ),
+  scaffoldBackgroundColor: Colors.blueGrey.shade900,
+  // canvasColor: Colors.blueGrey.shade100,
   elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(foregroundColor: Colors.grey.shade200)),
   // splashColor: Colors.transparent,
@@ -93,7 +101,7 @@ ThemeData darkMode = ThemeData(
     labelSmall: TextStyle(color: Colors.grey.shade200),
   ),
   inputDecorationTheme: InputDecorationTheme(
-    fillColor: Colors.grey.shade200,
+    fillColor: Colors.grey.shade800,
     floatingLabelStyle: TextStyle(
       color: Colors.grey.shade200,
     ),
@@ -101,6 +109,7 @@ ThemeData darkMode = ThemeData(
 
     // fillColor: Colors.white, // Background color of the input field
   ),
+
   iconTheme: IconThemeData(
     color: Colors.grey.shade200,
   ),
